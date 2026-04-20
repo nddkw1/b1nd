@@ -1,0 +1,180 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, transparent);
+}
+
+.logo {
+    width: 90px;
+    margin-left: 50px;
+    float: left;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    
+}
+
+.menu-item a{
+    flex-direction: row;
+    margin-left: 18px;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+
+.billboard {
+    position: relative;
+    height: 35vw;
+    background: linear-gradient(to top, #141414, transparent 15%);
+    z-index: 0;
+}
+
+.dimming {
+    position: absolute;
+    top: 0;  
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: linear-gradient(to top, #141414 0%, rgba(20, 20, 20, 0) 35%);
+    z-index: 1; 
+}
+
+.billboard-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vw;
+    z-index: 0;
+}
+
+.billboard-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.billboard-inner {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    z-index: 2;
+    justify-content: center;
+    padding-left: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+.content-section {
+    margin-left: 50px;
+}
+
+.content-logo {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.synopsis {
+    font-size: 0.8rem;
+    text-shadow: 2px 2px 4px black;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.billboard-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.billboard-white-button {
+    background-color: white;
+    color: black;
+}
+
+.billboard-white-button:hover {
+    background-color: #ffffffbf;
+}
+
+.billboard-gray-button {
+    background-color: gray;
+    color: white;
+}
+
+.billboard-gray-button:hover {
+    background-color: #6d6d6e66;
+}
+
+.button svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.content {
+    display: flex;
+    overflow: scroll;
+    gap: 8px;
+    padding: 20px;
+    width: 100%;
+}
+
+.thumbnail {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.thumbnail img {
+    display: block;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.thumbnail img:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.social-icon {
+    margin: 5px;
+}
