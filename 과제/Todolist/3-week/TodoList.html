@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="TodoList.css">
+    <title>TodoList</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="input" placeholder="할 일을 입력하세요">
+    <button id="add">추가</button>
+    <button id="del">삭제</button>
+
+    <ul id="ul">
+
+    </ul>
+</body>
+<script>
+    const input = document.getElementById('input');
+    const ul = document.getElementById('ul');
+    const addButton = document.getElementById('add');
+    const delButton = document.getElementById('del')
+
+    function addTodo() {
+        const li = document.createElement('li');
+        li.innerHTML = input.value;
+        ul.appendChild(li);
+        input.value = '';
+    };
+
+    function delTodo() {
+        const li = document.getElementsByTagName('li');
+        ul.removeChild(li[li.length - 1]);
+    };
+
+    addButton.addEventListener("click", addTodo);
+    delButton.addEventListener("click", delTodo);
+</script>
+</html>
