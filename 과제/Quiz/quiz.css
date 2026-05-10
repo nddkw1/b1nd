@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'OkMallangW';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2603-1@1.0/OkMallangW-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+body {
+    text-align: center;
+    background-color: beige;
+}
+
+h1 {
+    font-family: 'OkMallangW';
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+/* #ques {
+    display: inline-block;
+    width: 600px;
+    height: 110px;
+    background-color: beige;
+    border: 0.2px solid black;
+    border-radius: 20px;
+} */
+
+#Quiz {
+    display: block;
+    width: 100%;
+    height: 250px;
+    /* border: 1px solid black; */
+    font-size: 50px;
+    font-family: 'Paperozi';
+    line-height: 200px;
+}
+
+button {
+    font-family: 'OkMallangW';
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    /* line-height: 80px; */
+    margin: 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 50px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color:cornflowerblue;
+    color: white;
+}
+
+#current {
+    font-size: 30px;
+    font-family: "OkMallangW";
+}
+
+#Score {
+    position: fixed;
+    top: 80px;
+    right: 100px;
+}
+
+.timer {
+    font-size: 20px;
+    margin: 10px 0 0 0;
+}

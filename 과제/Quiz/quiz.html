@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <title>QU!Z</title>
+</head>
+<body>
+    <h1>QU!Z</h1>
+    <p id="current"><span id="Ques"></span> / 10</p>
+    <p id="Score">score <span id="score"></span></p>
+    <p class="timer">남은 시간 <span id="timer"></span></p>
+    
+    <section id="ques">
+        <div id="Quiz">
+            <!-- 여왕개미의 수명은 10년 이상이다. -->
+        </div>
+        <button id="O-button">O</button>
+        <button id="X-button">X</button>
+    </section>
+</body>
+<script>
+    const quizArray = [
+        "여왕개미의 수명은 10년 이상이다.", //O
+        "가자미의 눈은 중앙으로 쏠려있다.", //X
+        "하마는 붉은 색 땀을 흘린다.", //X
+        "퀴리부인은 노벨상을 2번 수상했다.", //O
+        "우리나라 최초의 오페라는 춘향전이다.", //O
+        "개미의 하루 평균 노동시간은 6시간이다.", //O
+        "금붕어는 뒤로 헤엄칠 수 있다.", //X
+        "손톱은 뼈가 아니고 피부가 변해서 된 것이다.", //O
+        "학교종이 땡땡땡 어서 모이자는 동요 '학교종이 땡땡땡'의 한소절이다.", //X
+        "63빌딩보다 남산타워가 더 높다." //X
+    ];
+    
+    const answerArray = ["O", "X", "X", "O", "O", "O", "X", "O", "X", "X"];
+
+    let Ques = 0;
+    let score = 0;
+    let timeLimit;
+    let max = answerArray.length
+
+    document.getElementById('score').innerHTML = 0;
+    document.getElementById('Quiz').innerHTML = quizArray[Ques];
+    document.getElementById('Ques').innerHTML = Ques+1;
+
+    function next(Ans) {
+        if (Ques >= max) {
+            return;
+        }
+
+        clearInterval(timer);
+        
+        if (Ans === answerArray[Ques]) score++;
+        Ques++;
+        
+        if (Ques < quizArray.length) {
+            document.getElementById('Quiz').innerHTML = quizArray[Ques];
+            document.getElementById('Ques').innerHTML = Ques + 1;
+            startTimer();
+        } 
+        else {
+            document.getElementById('Quiz').innerHTML = "끝! 점수는 " + score + "점";
+            document.getElementById('timer').innerHTML = "";
+            document.getElementById('Ques').innerHTML = max;
+
+        }
+        
+        document.getElementById('score').innerHTML = score;
+
+    }
+
+    function startTimer() {
+        timeLimit = 10;
+
+        timer = setInterval(function() {
+            document.getElementById('timer').innerHTML = timeLimit;
+            timeLimit--;
+        
+            if (timeLimit === 0) {
+                next(null);
+            }
+        }, 1 * 1000);
+    }
+
+    document.getElementById('O-button').addEventListener('click', function() { next('O'); });
+    document.getElementById('X-button').addEventListener('click', function() { next('X'); });
+
+    startTimer();
+</script>
+</html>
